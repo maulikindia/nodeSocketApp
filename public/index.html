@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>node socket.io app</title>
+</head>
+
+<body>
+    <script src="/socket.io/socket.io.js"">
+    </script>
+    <script >
+        let socket = io('http://localhost:5100');
+    </script>
+    <script>
+        //event fired from server,here handling
+        socket.on('helloEvent', function (msg) {
+            document.write(msg.data)
+        });
+
+        //fire event from client
+        socket.emit('m1', 'hello from client');
+
+    </script>
+    <h1>  hello</h1>
+    </body>
+</html>
